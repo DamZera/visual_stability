@@ -1,0 +1,28 @@
+#include <opencv2/opencv.hpp>
+#include <iostream>
+#include <stdio.h>
+#include <sys/time.h>
+
+#include "serial.h"
+
+#define WIDTH 320
+#define HEIGHT 240
+
+#define Y_D 90
+#define P_D 60
+
+#define TASK_DEADLINE 100000 //100ms
+#define TASK_PERIOD 15000 //15ms
+#define SEUIL_CENTER 15
+#define SEUIL_MAX 150
+#define SEUIL_OTHERS 150
+
+#define SEUIL_PIXEL_VIT 50
+
+using namespace cv;
+
+struct timeval start, checkpoint;
+
+int taskPeriodCheck();
+void processYawPitchAngles(int vectY, int vectX, int& yawAngle, int& pitchAngle);
+void colour_red_detection(Mat& frame,int& minX, int& minY, int& maxX, int& maxY, int& xMilieu, int& yMilieu);
