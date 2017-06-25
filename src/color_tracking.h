@@ -14,8 +14,12 @@
 #define TASK_DEADLINE 100000 //100ms
 #define TASK_PERIOD 15000 //15ms
 #define SEUIL_CENTER 15
-#define SEUIL_MAX 150
-#define SEUIL_OTHERS 150
+#define S_RMIN 75
+#define S_RMAX 205
+#define S_GMIN 10
+#define S_GMAX 50
+#define S_BMIN 16
+#define S_BMAX 126
 
 #define SEUIL_PIXEL_VIT 50
 

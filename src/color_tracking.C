@@ -67,15 +67,11 @@ void colour_red_detection(Mat& frame,int& minX, int& minY, int& maxX, int& maxY,
 			int g = frame.at<Vec3b>(i,j)[1];
 			int r = frame.at<Vec3b>(i,j)[2];
 			
-	  		if ( (r > SEUIL_MAX) && ((g+b) < SEUIL_OTHERS)){
+	  	if ( (r > S_RMIN) && (r < S_RMAX) && (g > S_GMIN) && (g < S_GMAX) && (b > S_BMIN) && (b < S_BMAX)){
 			   frame.at<Vec3b>(i,j)[0] = 0;
 			   frame.at<Vec3b>(i,j)[1] = 0;	
 			   frame.at<Vec3b>(i,j)[2] = 255;
 				
-			   /*if (j<minX) minX=j;
-			   if (i<minY) minY=i;
-			   if (j>maxX) maxX=j;
-			   if(i>maxY) maxY=i;*/
 			   sumX+=j;
 			   sumY+=i;
 			   nbpixel++;
