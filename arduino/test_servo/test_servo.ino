@@ -18,7 +18,7 @@ void setup() {
 void readSerialToServos(){
   while(Serial.available() > 0){
     car = Serial.read();
-    if(car != '\n'){
+    if(car != '+'){
       buff[i] = car;
       buff[i+1] = '\0';
       i++;

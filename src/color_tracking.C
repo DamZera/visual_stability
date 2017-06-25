@@ -29,21 +29,21 @@ void processYawPitchAngles(int vectY, int vectX, int& yawAngle, int& pitchAngle)
 	//std::cout << "vx: " << valToaddX << " vy: " << valToaddY << std::endl;
 
 	if(vectY<-SEUIL_CENTER && vectX<-SEUIL_CENTER){
-        yawAngle-=valToaddX;pitchAngle+=valToaddY;
+        yawAngle-=valToaddX;pitchAngle-=valToaddY;
   	} else if(vectY>SEUIL_CENTER && vectX>SEUIL_CENTER){
-    	yawAngle+=valToaddX;pitchAngle-=valToaddY;
+    	yawAngle+=valToaddX;pitchAngle+=valToaddY;
   	} else if(-SEUIL_CENTER<vectY && vectY<SEUIL_CENTER && vectX<-SEUIL_CENTER){
     	yawAngle-=valToaddX;
   	} else if(-SEUIL_CENTER<vectY && vectY<SEUIL_CENTER && vectX>SEUIL_CENTER){
     	yawAngle+=valToaddX;
   	} else if(-SEUIL_CENTER<vectX && vectX<SEUIL_CENTER && vectY<-SEUIL_CENTER){
-    	pitchAngle+=valToaddY;
-  	} else if(-SEUIL_CENTER<vectX && vectX<SEUIL_CENTER && vectY>SEUIL_CENTER){
     	pitchAngle-=valToaddY;
+  	} else if(-SEUIL_CENTER<vectX && vectX<SEUIL_CENTER && vectY>SEUIL_CENTER){
+    	pitchAngle+=valToaddY;
   	} else if(vectY>SEUIL_CENTER && vectX<-SEUIL_CENTER){
-    	yawAngle-=valToaddX;pitchAngle-=valToaddY;
+    	yawAngle-=valToaddX;pitchAngle+=valToaddY;
   	} else if(vectY<-SEUIL_CENTER && vectX>SEUIL_CENTER){
-    	yawAngle+=valToaddX;pitchAngle+=valToaddY;
+    	yawAngle+=valToaddX;pitchAngle-=valToaddY;
   	}
 
   	if(yawAngle>180)
